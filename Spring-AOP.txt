@@ -21,3 +21,5 @@ Now for giving that method to run before a particular method or statement in oth
  and in brackets we can specify that run before that method.
  Also for all this to work properly we have to give the config of aspect-aop in spring.xml, this will tell the spring that
  please search for the aspect in my project and implement it.
+Now if we want to run that method for a single or particular class just give the package with class name
+in the exetuion parameter.
