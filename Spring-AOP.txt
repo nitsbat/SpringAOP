@@ -1,0 +1,22 @@
+SPRING AOP - Aspect object programming
+
+Aspect object programming basically differs from the basic modular programming where we write methods/procedures for implementing things.
+This aspect programming is basically used where we are using same methods or objects in multiple classes. i.e logging,transaction,etc.
+
+e.g - suppose we have a method/function which is been used in Class A,class B,Class C. Now what we can do to make the code better is that
+	  take out this method in a different class and then make an object of this class and call the method from all these three classes.
+	  But now also there is a problem that all the three classes are instantiating the object and calling the function.
+	  
+	  In AOP, what happens is that we make a aspect of this method, aspect means a new class only but this class will be connected to a configuration
+	  in which we will say that if this method is used by all three classes, then these classes will be configured in that aspect configuration.
+	  
+STEPS IN AOP 
+1) Write Aspects i.e classes
+2) Configure where the aspects apply.
+
+Now to create an aspect, we have to create a class and then just give an annotation of @Aspect above that class.
+in this class we can write the methods which we want to configure to various classes.
+Now for giving that method to run before a particular method or statement in other classes, we use @Before annotation
+ and in brackets we can specify that run before that method.
+ Also for all this to work properly we have to give the config of aspect-aop in spring.xml, this will tell the spring that
+ please search for the aspect in my project and implement it.
