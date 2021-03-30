@@ -22,4 +22,17 @@ Now for giving that method to run before a particular method or statement in oth
  Also for all this to work properly we have to give the config of aspect-aop in spring.xml, this will tell the spring that
  please search for the aspect in my project and implement it.
 Now if we want to run that method for a single or particular class just give the package with class name
-in the exetuion parameter.
+in the execution parameter.
+
+Now there are two things
+one is like we want to put this method at any point in the code like anywhere,
+and the other is this any class can use this method multiple times.
+
+So for first problem we have something called wildcards. wildcards means like suppose we want to use that before method
+i.e logging method before any method starting with get so we will give like
+@Before("execution(* org.bisht.model.*.get*(..))")
+
+
+Now to implement multiple methods at the same place we can use pointcut.
+this method is known as pointcut.
+Refer example in JavaAspect.class
