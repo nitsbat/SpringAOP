@@ -15,7 +15,8 @@ STEPS IN AOP
 2) Configure where the aspects apply.
 
 Now to create an aspect, we have to create a class and then just give an annotation of @Aspect above that class.
-in this class we can write the methods which we want to configure to various classes.
+in this class we can write the methods which we want to configure to various classes. generally these methods are known
+as advices in spring language,
 Now for giving that method to run before a particular method or statement in other classes, we use @Before annotation
  and in brackets we can specify that run before that method.
  Also for all this to work properly we have to give the config of aspect-aop in spring.xml, this will tell the spring that
