@@ -7,9 +7,10 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class JavaAspect {
 
-    @Before("allGetters()")
+//    This means that before all the getters inside the circle class executed, execute this method
+    @Before("allGetters() && allCircle()")
     public void loggingAdvice() {
-        System.out.println("Logging advice. calling getMEthod");
+        System.out.println("Logging advice. calling getMethod");
     }
 
     @Before("allGetters()")
@@ -17,7 +18,11 @@ public class JavaAspect {
         System.out.println("Transaction advice.");
     }
 
-    @Pointcut("execution(* org.bisht.model.*.get*(..))")
+    @Pointcut("execution(* get*())")
     public void allGetters(){}
+
+    @Pointcut("within(org.bisht.model.Circle)")
+    public void allCircle(){
+    }
 
 }
