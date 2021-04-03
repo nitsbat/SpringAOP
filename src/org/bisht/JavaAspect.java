@@ -8,12 +8,16 @@ import org.bisht.model.Circle;
 
 @Aspect
 public class JavaAspect {
-
     //    This means that before all the getters inside the circle class executed, execute this method
     @Before("allCircle()")
     public void loggingAdvice(JoinPoint joinPoint) {
-        Circle circle = (Circle) joinPoint.getTarget();
-        System.out.println("Logging advice. calling " + circle.getName());
+//        Circle circle = (Circle) joinPoint.getTarget();
+//        System.out.println("Logging advice. calling " + circle.getName());
+    }
+
+    @Before("args(String)")
+    public void circleStringAdvice(JoinPoint joinPoint) {
+        System.out.println("Method takes string arguments " + joinPoint.toString());
     }
 
     @Pointcut("execution(* get*())")
