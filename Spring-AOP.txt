@@ -55,3 +55,5 @@ Expore the getTarget() method of JoinPoints.
 We can also give arguments to the advice method. By that we can control the behavior liek suppose we want to run only
 those methods which have the argument of String Datatype.
 
+This @Before means that it will run before the Setter or any method is called.
+Similarly if we want that the advice method should run before the actual method is called we have the @after annotation.
