@@ -12,15 +12,15 @@ public class JavaAspect {
 //        System.out.println("Logging advice. calling " + circle.getName());
     }
 
-    @AfterReturning("args(name)")
-    public void circleStringAdvice(JoinPoint joinPoint, String name) {
+    @AfterReturning(pointcut = "args(name)", returning = "returnObject")
+    public void circleStringAdvice(JoinPoint joinPoint, String name, String returnObject) {
         System.out.println("Method takes string arguments(" + name +
-                ") and method name : " + joinPoint.toString());
+                ") and method name : " + joinPoint.toString() + "and return object is : " + returnObject);
     }
 
-    @AfterThrowing("args(name)")
-    public void circleStringAdviceException(JoinPoint joinPoint, String name) {
-        System.out.println("Exception Thrown");
+    @AfterThrowing(pointcut = "args(name)", throwing = "ex")
+    public void circleStringAdviceException(String name, RuntimeException ex) {
+        System.out.println("Exception Thrown " + ex);
     }
 
     @Pointcut("execution(* get*())")

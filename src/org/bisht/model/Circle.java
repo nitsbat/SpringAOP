@@ -12,4 +12,10 @@ public class Circle {
         this.name = name;
         throw (new RuntimeException());
     }
+
+    public String setNameAndReturn(String name) {
+        System.out.println("Setter is called");
+        this.name = name;
+        return name;
+    }
 }

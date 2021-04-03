@@ -8,6 +8,8 @@ public class AOPMain {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         ShapeService service = context.getBean("shapeService", ShapeService.class);
+        service.getCircle().setNameAndReturn("Dummy name");
+        System.out.println("\n\n");
         service.getCircle().setName("Dummy name");
     }
 }

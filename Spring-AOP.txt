@@ -65,3 +65,16 @@ advice will run. But if we want that it should run only if the setter method is 
 
 So after annotation is very similar and called after finally block in try catch block cozz it will always run after the method is executed.
 
+No what if we also want to take out the return object like we have taken the argument object.
+So hence the property which is used for this is the "returning" like @After(returning = "returnObject") and then give the
+return type with the identifier name as returnObject only and can used it.
+
+ @AfterReturning(pointcut = "args(name)", returning = "returnObject")
+    public void circleStringAdvice(JoinPoint joinPoint, String name, String returnObject) {}
+
+    Now in above case only those methods who have the arguments of String datatype and the return object as String
+    will execute this method.
+
+ Similarly for getting the return object for the exception cases we can use "throwing" property.
+
+
