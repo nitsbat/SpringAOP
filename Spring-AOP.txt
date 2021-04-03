@@ -57,3 +57,6 @@ those methods which have the argument of String Datatype.
 
 This @Before means that it will run before the Setter or any method is called.
 Similarly if we want that the advice method should run before the actual method is called we have the @after annotation.
+In @After the advice is run after the method/setter, but if there is any exception in the setter method, then also the
+advice will run. But if we want that it should run only if the setter method is succesfully called then use
+@AfterReturning.

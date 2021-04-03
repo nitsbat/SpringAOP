@@ -19,7 +19,7 @@
     </bean>
 
     <bean name="circle" class="org.bisht.model.Circle">
-        <property name="name" value="Circle name"></property>
+<!--        <property name="name" value="Circle name"></property>-->
     </bean>
 
     <bean name="shapeService" class="org.bisht.service.ShapeService" autowire="byName">

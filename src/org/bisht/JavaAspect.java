@@ -1,10 +1,7 @@
 package org.bisht;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 
 @Aspect
 public class JavaAspect {
@@ -15,7 +12,7 @@ public class JavaAspect {
 //        System.out.println("Logging advice. calling " + circle.getName());
     }
 
-    @After("args(name)")
+    @AfterReturning("args(name)")
     public void circleStringAdvice(JoinPoint joinPoint, String name) {
         System.out.println("Method takes string arguments(" + name +
                 ") and method name : " + joinPoint.toString());
