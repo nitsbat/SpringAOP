@@ -77,4 +77,18 @@ return type with the identifier name as returnObject only and can used it.
 
  Similarly for getting the return object for the exception cases we can use "throwing" property.
 
+*************************************** Around advice type ******************************
+
+Now suppose if we want the advice before and after the target method, instead of writing separate advices using after before
+we can eeficiently use the @around advice.
+Around advice always takes the ProceedingJoinPoint as the parameter and then we have the ability to run the target
+method by usinf point.proceed() method. this facility is not there in @After and @Before advices
+
+Also we have to take care that if the target method is returning some object we have to make our around advice
+compatible to it. i.e by returning the object from the advice also.
+
+Around advice is only efficient if really the target method needs both before and after method processing.
+
+
+
 

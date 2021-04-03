@@ -1,6 +1,7 @@
 package org.bisht;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 @Aspect
@@ -21,6 +22,20 @@ public class JavaAspect {
     @AfterThrowing(pointcut = "args(name)", throwing = "ex")
     public void circleStringAdviceException(String name, RuntimeException ex) {
         System.out.println("Exception Thrown " + ex);
+    }
+
+    @Around(value = "allGetters()")
+    public Object aroundAdviceMethod(ProceedingJoinPoint proceedingJoinPoint) {
+        Object proceed = null;
+
+        try {
+            System.out.println("Before proceed");
+            proceed = proceedingJoinPoint.proceed();
+            System.out.println("After proceed");
+        } catch (Throwable throwable) {
+            System.out.println("throw proceed");
+        }
+        return proceed;
     }
 
     @Pointcut("execution(* get*())")
