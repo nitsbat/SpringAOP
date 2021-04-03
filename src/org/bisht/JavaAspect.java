@@ -4,6 +4,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.bisht.model.Circle;
 
 @Aspect
 public class JavaAspect {
@@ -11,8 +12,8 @@ public class JavaAspect {
     //    This means that before all the getters inside the circle class executed, execute this method
     @Before("allCircle()")
     public void loggingAdvice(JoinPoint joinPoint) {
-        System.out.println(joinPoint.toString());
-        System.out.println("Logging advice. calling getMethod");
+        Circle circle = (Circle) joinPoint.getTarget();
+        System.out.println("Logging advice. calling " + circle.getName());
     }
 
     @Pointcut("execution(* get*())")

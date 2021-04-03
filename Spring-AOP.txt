@@ -50,5 +50,8 @@ JoinPoint means that it will have the information about the method which is call
 It basically means all the points in your code where the advice method is called. So joinpoint can be more than the method,
 it can be configure to run even when a member variable is accessed.
 We can include the joinpoints in the argument of our advice method.
-getTarget()
-args()
+Expore the getTarget() method of JoinPoints.
+
+We can also give arguments to the advice method. By that we can control the behavior liek suppose we want to run only
+those methods which have the argument of String Datatype.
+
