@@ -18,6 +18,11 @@ public class JavaAspect {
                 ") and method name : " + joinPoint.toString());
     }
 
+    @AfterThrowing("args(name)")
+    public void circleStringAdviceException(JoinPoint joinPoint, String name) {
+        System.out.println("Exception Thrown");
+    }
+
     @Pointcut("execution(* get*())")
     public void allGetters() {
     }

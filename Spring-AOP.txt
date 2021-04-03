@@ -60,3 +60,8 @@ Similarly if we want that the advice method should run before the actual method 
 In @After the advice is run after the method/setter, but if there is any exception in the setter method, then also the
 advice will run. But if we want that it should run only if the setter method is succesfully called then use
 @AfterReturning.
+
+@AfterThrowing is an annotation which we will run the advice after the method matching with the arguments will throw an exception.
+
+So after annotation is very similar and called after finally block in try catch block cozz it will always run after the method is executed.
+
