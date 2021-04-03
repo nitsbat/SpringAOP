@@ -15,9 +15,10 @@ public class JavaAspect {
 //        System.out.println("Logging advice. calling " + circle.getName());
     }
 
-    @Before("args(String)")
-    public void circleStringAdvice(JoinPoint joinPoint) {
-        System.out.println("Method takes string arguments " + joinPoint.toString());
+    @Before("args(name)")
+    public void circleStringAdvice(JoinPoint joinPoint, String name) {
+        System.out.println("Method takes string arguments(" + name +
+                ") and method name : " + joinPoint.toString());
     }
 
     @Pointcut("execution(* get*())")
