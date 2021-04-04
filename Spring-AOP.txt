@@ -96,4 +96,16 @@ More readable that's y we used it.
 We can make a custom advice annotations by using an annotation in the Java program.
 Refer the example.
 
+We can transfer or shift all the annotations of aspect in the spring.xml also like we have done in the spring core.
+follow this video if required - https://www.youtube.com/watch?v=ewWzxcNnI7k&list=PLE37064DE302862F8&index=11
+
+***************************** Concept of Proxy ***********************
+
+Proxy design pattern is like to extend the functionality of a class, we generally use another class over it
+i.e a wrapper class over it.
+
+Now if you will see the getBean() method that can be implemented using the FactoryService also.
+Very beautiful example of proxy can be seen here - https://www.youtube.com/watch?v=yiinKulgm4U&list=PLE37064DE302862F8&index=13
+
+
 
