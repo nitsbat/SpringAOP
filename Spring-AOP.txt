@@ -89,6 +89,11 @@ compatible to it. i.e by returning the object from the advice also.
 
 Around advice is only efficient if really the target method needs both before and after method processing.
 
+************************** CUSTOM ADVICE ANNOTATIONS **********************
 
+More readable that's y we used it.
+
+We can make a custom advice annotations by using an annotation in the Java program.
+Refer the example.
 
 

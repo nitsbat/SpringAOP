@@ -24,7 +24,7 @@ public class JavaAspect {
         System.out.println("Exception Thrown " + ex);
     }
 
-    @Around(value = "allGetters()")
+    @Around("@annotation(org.bisht.annotation.Loggable)")
     public Object aroundAdviceMethod(ProceedingJoinPoint proceedingJoinPoint) {
         Object proceed = null;
 

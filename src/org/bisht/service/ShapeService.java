@@ -1,5 +1,6 @@
 package org.bisht.service;
 
+import org.bisht.annotation.Loggable;
 import org.bisht.model.Circle;
 import org.bisht.model.Triangle;
 
@@ -7,6 +8,7 @@ public class ShapeService {
     private Circle circle;
     private Triangle triangle;
 
+    @Loggable
     public Circle getCircle() {
         System.out.println("Method called");
         return circle;
